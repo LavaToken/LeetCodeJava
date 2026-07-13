@@ -14,6 +14,10 @@ public class MinimumDistance {
     }
 
     public int minimumDistance(int[] nums){
+        if(nums.length < 3){
+            return -1;
+        }
+        
         HashMap<Integer, List<Integer>> map = new HashMap<>();
         for(int i = 0; i < nums.length; i++){
             map.computeIfAbsent(nums[i], k -> new ArrayList<>()).add(i);
@@ -24,12 +28,16 @@ public class MinimumDistance {
             if(list.size() < 3){
                 continue;
             }
-            // For i < j < k, distance = 2 * (k - i). Best triples are consecutive occurrences.
+            // just grab 3 in a row, dist = 2*(k-i)  
             for(int i = 0; i + 2 < list.size(); i++){
                 int distance = 2 * (list.get(i + 2) - list.get(i));
                 minDistance = Math.min(minDistance, distance);
             }
         }
-        return minDistance == Integer.MAX_VALUE ? -1 : minDistance;
+        if(minDistance == Integer.MAX_VALUE) {
+            return -1;
+        } else {
+            return minDistance;
+        }
     }
 }
