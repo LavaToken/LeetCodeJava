@@ -6,15 +6,15 @@ import java.util.Arrays;
 public class GcdSum {
     public static void main(String[] args){
         int[] arr1 = {2, 6, 4}; // Should be 2
-        long sum = gcdSum(arr1);
+        int sum = gcdSum(arr1);
         System.out.println(sum);
 
         int[] arr2 = {3, 6, 2, 8}; // Should be 5
-        long sum2 = gcdSum(arr2);
+        int sum2 = gcdSum(arr2);
         System.out.println(sum2);
         
         int[] arr3 = {1, 2, 3, 4, 5};
-        long sum3 = gcdSum(arr3);
+        int sum3 = gcdSum(arr3);
         System.out.println(sum3);
     }
 
@@ -28,7 +28,8 @@ public class GcdSum {
             }
             prefixGcd[i] = gcd(nums[i], mx);
         }
-        Arrays.sort(prefixGcd);
+        // Using in-place QuickSort for better average case performance on primitive arrays
+        quickSort(prefixGcd, 0, prefixGcd.length - 1);
 
         for(int i = 0; i < prefixGcd.length/2; i++){
             count += gcd(prefixGcd[i], prefixGcd[prefixGcd.length - i - 1]);
@@ -41,5 +42,31 @@ public class GcdSum {
             return a;
         }
         return gcd(b, a % b);
+    }
+
+    public static void quickSort(long[] arr, int low, int high) {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+
+            quickSort(arr, low, pi - 1);  
+            quickSort(arr, pi + 1, high); 
+        }
+    }
+
+    public static int partition(long[] arr, int low, int high) {
+        long pivot = arr[high];
+        int i = low - 1;
+        for(int j = low; j < high; j++){
+            if(arr[j] < pivot){
+                i++;
+                long temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        long temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+        return i + 1;
     }
 }
