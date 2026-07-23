@@ -61,6 +61,10 @@ public class MaxActiveSection {
         String s13 = "11011011";
         int expected13 = 6;
         System.out.println(input + s13 + "\n" + output + maxActiveSectionsAfterTrade(s13) + "\n" + expected + expected13);
+    
+        String s14 = "00";
+        int expected14 = 0;
+        System.out.println(input + s14 + "\n" + output + maxActiveSectionsAfterTrade(s14) + "\n" + expected + expected14);
     }
 
     public static int maxActiveSectionsAfterTrade(String s){
