@@ -17,7 +17,7 @@ public class NumberOfUniqueXOR {
         System.out.println("Output: " + uniqueXorTriplets(nums2) + " Expected: " + expected2);
 
         int[] nums3 = {1,2,3,4,5};
-        int expected3 = 7;
+        int expected3 = 8;
         System.out.println("Output: " + uniqueXorTriplets(nums3) + " Expected: " + expected3);
 
         // Test xor on {1,2,3,4,5}
@@ -42,10 +42,11 @@ public class NumberOfUniqueXOR {
 
     
     public static int uniqueXorTriplets(int[] nums){
-        int binaryLength = Integer.toBinaryString(nums.length).length();
-        if(nums.length % 2 == 0){
-            return (int)Math.pow(2, binaryLength);
+        if(nums.length == 2){
+            return 2;
+        }else if(nums.length == 1){
+            return 1;
         }
-        return (int)Math.pow(2, binaryLength) - 1;
+        return (int)Math.pow(2, Integer.toBinaryString(nums.length).length());
     }
 }
