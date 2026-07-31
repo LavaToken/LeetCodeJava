@@ -1,3 +1,6 @@
+// 3014. Minimum Number of Pushes to Type Word I
+// https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-i/
+
 public class MinimumNumPushes {
     public static void main(String[] args) {
         String word1 = "abcde";
