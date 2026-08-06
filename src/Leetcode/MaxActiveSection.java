@@ -1,3 +1,4 @@
+package Leetcode;
 // 3499. Maximize Active Section with Trade-1
 // https://leetcode.com/problems/maximize-active-section-with-trade-i/
 

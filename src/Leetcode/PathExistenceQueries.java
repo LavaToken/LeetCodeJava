@@ -1,3 +1,4 @@
+package Leetcode;
 import java.util.Arrays;
 
 // 3534. Path Existence Queries in a Graph II

@@ -1,3 +1,4 @@
+package Leetcode;
 class Solution {
     public int rob(int[] nums) {
         if(nums.length < 2){

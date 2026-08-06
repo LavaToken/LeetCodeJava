@@ -1,3 +1,4 @@
+package Leetcode;
 // 3517. Smallest Palindrome Rearrangement I
 // https://leetcode.com/problems/smallest-palindromic-rearrangement-i/
 import java.util.Map;

@@ -1,3 +1,4 @@
+package Leetcode;
 class IsHappy {
     public boolean isHappy(int n) {
         if(n == 1 || n == 7){

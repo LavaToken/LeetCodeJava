@@ -1,3 +1,4 @@
+package Leetcode;
 class MaximalRectangle {
     public int maximalRectangle(char[][] matrix) {
         int[] currentArray = new int[matrix[0].length];
