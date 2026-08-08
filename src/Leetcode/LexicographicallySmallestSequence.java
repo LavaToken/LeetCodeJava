@@ -32,7 +32,8 @@ public class LexicographicallySmallestSequence {
     Condition:
     1. String x is almost equal to y if you can change at most one character 
     2. Indices are sorted in ascending order
-    3. Concatenating the characters at indices word1 in the same order results in a string that is almost equal to word2*/
+    3. Concatenating the characters at indices word1 in the same order results in a string that is almost equal to word2
+    */
     public static int[] validSequence(String word1, String word2){
         int n1 = word1.length(), n2 = word2.length();
         int[] dp = new int[n1 + 1];
